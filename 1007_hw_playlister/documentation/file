@@ -1,0 +1,115 @@
+
+Artist
+[32m  can be initialized[0m
+[32m  can have a name[0m
+  with songs
+[32m    has songs[0m
+[32m    can have a song added[0m
+[32m    knows how many songs it has[0m
+  with genres
+[31m    can have genres (FAILED - 1)[0m
+  Class methods
+[31m    keeps track of the artists that have been created (FAILED - 2)[0m
+[31m    can count how many artists have been created (FAILED - 3)[0m
+[31m    can reset the artists that have been created (FAILED - 4)[0m
+
+Genre
+[32m  can initialize a genre[0m
+[32m  has a name[0m
+[31m  has many songs (FAILED - 5)[0m
+[31m  has many artists (FAILED - 6)[0m
+[31m  keeps unique artists (FAILED - 7)[0m
+  Class methods
+[31m    keeps track of all known genres (FAILED - 8)[0m
+[31m    can reset genres (FAILED - 9)[0m
+
+Song
+[32m  can initialize a song[0m
+[32m  can have a name[0m
+[31m  can have a genre (FAILED - 10)[0m
+[31m  has an artist (FAILED - 11)[0m
+
+Failures:
+
+  1) Artist with genres can have genres
+     [31mFailure/Error:[0m [31martist.genres.should include(song.genre)[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `include?' for nil:NilClass[0m
+[36m     # ./spec/artist_spec.rb:46:in `block (3 levels) in <top (required)>'[0m
+
+  2) Artist Class methods keeps track of the artists that have been created
+     [31mFailure/Error:[0m [31mArtist.all.should include(@artist)[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `all' for Artist:Class[0m
+[36m     # ./spec/artist_spec.rb:58:in `block (3 levels) in <top (required)>'[0m
+
+  3) Artist Class methods can count how many artists have been created
+     [31mFailure/Error:[0m [31mArtist.reset_artists  # corrections[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `reset_artists' for Artist:Class[0m
+[36m     # ./spec/artist_spec.rb:62:in `block (3 levels) in <top (required)>'[0m
+
+  4) Artist Class methods can reset the artists that have been created
+     [31mFailure/Error:[0m [31mArtist.reset_artists.should eq(true)[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `reset_artists' for Artist:Class[0m
+[36m     # ./spec/artist_spec.rb:68:in `block (3 levels) in <top (required)>'[0m
+
+  5) Genre has many songs
+     [31mFailure/Error:[0m [31mgenre.songs.count.should eq(3)[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `songs' for #<Genre:0x007fcd649947e0 @name="rap">[0m
+[36m     # ./spec/genre_spec.rb:22:in `block (2 levels) in <top (required)>'[0m
+
+  6) Genre has many artists
+     [31mFailure/Error:[0m [31m2.each do[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `each' for 2:Fixnum[0m
+[36m     # ./spec/genre_spec.rb:29:in `block (2 levels) in <top (required)>'[0m
+
+  7) Genre keeps unique artists
+     [31mFailure/Error:[0m [31mgenre.artists.count.should eq(1)[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `artists' for #<Genre:0x007fcd649f4b90 @name="rap">[0m
+[36m     # ./spec/genre_spec.rb:47:in `block (2 levels) in <top (required)>'[0m
+
+  8) Genre Class methods keeps track of all known genres
+     [31mFailure/Error:[0m [31mGenre.reset_genres # fixed[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `reset_genres' for Genre:Class[0m
+[36m     # ./spec/genre_spec.rb:52:in `block (3 levels) in <top (required)>'[0m
+
+  9) Genre Class methods can reset genres
+     [31mFailure/Error:[0m [31mGenre.reset_genres # fixed[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `reset_genres' for Genre:Class[0m
+[36m     # ./spec/genre_spec.rb:62:in `block (3 levels) in <top (required)>'[0m
+
+  10) Song can have a genre
+     [31mFailure/Error:[0m [31mSong = Song.new[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `new' for #<Song:0x007fcd64a95e28 @name="Lala">[0m
+[36m     # ./spec/song_spec.rb:16:in `block (2 levels) in <top (required)>'[0m
+
+  11) Song has an artist
+     [31mFailure/Error:[0m [31mSong = Song.new[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `new' for #<Song:0x007fcd64a95e28 @name="Lala">[0m
+[36m     # ./spec/song_spec.rb:22:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.04363 seconds
+[31m20 examples, 11 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/artist_spec.rb:42[0m [36m# Artist with genres can have genres[0m
+[31mrspec ./spec/artist_spec.rb:57[0m [36m# Artist Class methods keeps track of the artists that have been created[0m
+[31mrspec ./spec/artist_spec.rb:61[0m [36m# Artist Class methods can count how many artists have been created[0m
+[31mrspec ./spec/artist_spec.rb:67[0m [36m# Artist Class methods can reset the artists that have been created[0m
+[31mrspec ./spec/genre_spec.rb:16[0m [36m# Genre has many songs[0m
+[31mrspec ./spec/genre_spec.rb:25[0m [36m# Genre has many artists[0m
+[31mrspec ./spec/genre_spec.rb:38[0m [36m# Genre keeps unique artists[0m
+[31mrspec ./spec/genre_spec.rb:51[0m [36m# Genre Class methods keeps track of all known genres[0m
+[31mrspec ./spec/genre_spec.rb:61[0m [36m# Genre Class methods can reset genres[0m
+[31mrspec ./spec/song_spec.rb:15[0m [36m# Song can have a genre[0m
+[31mrspec ./spec/song_spec.rb:21[0m [36m# Song has an artist[0m

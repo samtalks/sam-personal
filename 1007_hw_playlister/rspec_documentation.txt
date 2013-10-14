@@ -1,0 +1,25 @@
+
+Artist
+[32m  can be initialized[0m
+[32m  can have a name[0m
+  with songs
+[32m    has songs[0m
+[32m    can have a song added[0m
+[32m    knows how many songs it has[0m
+  with genres
+[31m    can have genres (FAILED - 1)[0m
+
+Failures:
+
+  1) Artist with genres can have genres
+     [31mFailure/Error:[0m [31martist.genres.should include(song.genre)[0m
+     [31mNoMethodError[0m:
+       [31mundefined method `include?' for nil:NilClass[0m
+[36m     # ./spec/artist_spec.rb:46:in `block (3 levels) in <top (required)>'[0m
+
+Finished in 0.01901 seconds
+[31m6 examples, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/artist_spec.rb:42[0m [36m# Artist with genres can have genres[0m
